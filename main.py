@@ -60,9 +60,7 @@ def send_email():
         print(f"Error: {e}")
         return jsonify({'error': 'Failed to send email.'}), 500
 
-# @app.route('/contact')
-# def contact():
-#     return render_template('contact.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
