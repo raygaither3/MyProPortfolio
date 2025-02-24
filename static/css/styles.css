@@ -1,0 +1,345 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+/* General Styling */
+.hero-section {
+    width: 100vw; /* Full screen width */
+    min-height: 50vh; /* Ensures sufficient height */
+    background: url('../assets/images/black-python.jpg') center/cover no-repeat;
+    padding: 80px 20px;
+    border-radius: 0; /* Remove border radius for full-width look */
+    border: 2px solid #444;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: calc(50% - 50vw); /* Center full-width section */
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px; /* Wider max-width for desktop */
+    margin: 0 auto 20px;
+}
+
+
+
+/* SVG Icon */
+svg.bi {
+    fill: #14149c70;
+}
+
+/* General Styles */
+body {
+    background-color: #121212;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-inverse {
+    background-color: black;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .nav > li > a {
+    color: #e0e0e0 !important;
+}
+
+.jumbotron {
+    font-size: 2.2 rem;
+    font-weight: bold;
+    
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 40px;
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Individual Card Styling */
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px; /* Adjust as needed */
+    object-fit: cover; /* Ensures all images maintain aspect ratio and fill space */
+    border-radius: 10px 10px 0 0; /* Keeps top corners rounded */
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .col-md-3 {
+        width: 50%; /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-3 {
+        width: 100%; /* 1 card per row on small screens */
+    }
+}
+
+footer {
+    background-color: #212529; /* Dark background */
+    color: #868e96; /* Muted text */
+}
+
+footer a {
+    color: #868e96;
+    transition: color 0.2s, transform 0.2s;
+}
+
+footer a:hover {
+    color: #0a66c2; /* LinkedIn blue on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.test {
+    display: block;
+    width: 100%;  /* Ensures inputs and select fill the width */
+    margin-bottom: 10px; /* Adds space between elements */
+}
+
+.contact-form-container {
+    width: 50%;
+    max-width: 600px; /* Prevents it from getting too large on extra-wide screens */
+    margin: 50px auto; /* Centers the form */
+    background-color: #1e1e1e; /* Dark background to match your theme */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-container label {
+    display: block;
+    font-size: 16px;
+    color: #ffffff; /* Light text for contrast */
+    margin-bottom: 5px;
+}
+
+.contact-form-container input,
+.contact-form-container select,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.contact-form-container textarea {
+    resize: none;
+}
+
+.contact-form-container .ws-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #4CAF50; /* Green button, can be changed */
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-form-container .ws-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive: Full width on smaller screens */
+@media screen and (max-width: 768px) {
+    .contact-form-container {
+        width: 90%;
+    }
+}
+
+.card-link {
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+.card-link:hover {
+    transform: scale(1.05);
+}
+
+/* Card container styling */
+.card-link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Image and overlay container */
+.card-overlay {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.card-link:hover .card-img {
+    transform: scale(1.1);
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.card-link:hover .overlay {
+    opacity: 1;
+}
+
+/* Play icon */
+.play-icon {
+    font-size: 48px;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.card-link:hover .play-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-body video {
+    border-radius: 8px;
+}
+
+.jumbotron {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.jumbotron p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #375362;
+    border-color: #375362;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2a3b4a;
+    transform: translateY(-2px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.thank-you-message {
+    color: #00ff00; /* Success Green */
+}
+
+.error-message {
+    color: #ff4444; /* Error Red */
+}
+
+@media (max-width: 768px) {
+    .position-relative h1 {
+        font-size: 2rem;
+    }
+
+    .position-relative p {
+        font-size: 1rem;
+    }
+}

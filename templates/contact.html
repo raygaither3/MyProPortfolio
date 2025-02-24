@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block body %} 
+
+<div class="hero-section text-center text-white">
+    <h1 class="hero-title">Contact Me</h1>
+    <p class="hero-subtitle">
+        Whether it's collaboration, questions, or ideas—I'm just a message away. <br> RAY GAITHER
+    </p>
+</div>
+
+<div class="contact-form-container">
+    <form id="contactForm">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="phone">Phone Number (Optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number.." pattern="[0-9]{10}">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" placeholder="Your company..">
+
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Thank You Message -->
+<div id="thankYouMessage" class="thank-you-message" style="display:none;" aria-live="polite">
+    Thank you for reaching out! Redirecting to home...
+</div>
+
+<!-- Error Message -->
+<div id="errorMessage" class="error-message" style="display:none; color: red;" aria-live="polite">
+    Oops! Something went wrong. Please try again later.
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    window.onload = () => {
+        emailjs.init("4t6ebSCys3Hm8NPUe");
+    }
+
+    document.getElementById('contactForm').onsubmit = function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_qlixm65', 'template_itire5i', this)
+            .then(() => {
+                // Show Thank You Message
+                document.getElementById('thankYouMessage').style.display = 'block';
+
+                // Hide Form
+                document.getElementById('contactForm').style.display = 'none';
+
+                // Clear Error Message if shown
+                document.getElementById('errorMessage').style.display = 'none';
+
+                // Redirect to Home Page after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/'; 
+                }, 3000);
+
+                // Reset Form
+                document.getElementById('contactForm').reset();
+            })
+            .catch((err) => {
+                console.error('EmailJS Error:', err);
+                
+                // Show Error Message
+                document.getElementById('errorMessage').style.display = 'block';
+            });
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+
+
+<!-- Jumbotron -->
+<div class="hero-section text-center text-white">
+    <h1 class="hero-title">Bringing Ideas to Life with Code</h1>
+    <p class="hero-subtitle">
+        Passionate developer skilled in Python, web development, and data analysis—building innovative solutions one project at a time.<br>  RAY GAITHER
+    </p>
+</div>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Lets Get Started
+        </h1>      
+        <p>Below are examples of some of the programs I’ve developed, ranging from an e-commerce web app to a color reveal tool and a file-organizing desktop app. Explore the video clips to see my work in action!</p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <!-- Card 1: E-commerce -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#webDevModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/web-dev-pic.jpg') }}" 
+                         alt="Web Development" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">E-commerce App</p>
+            </div>
+        </div>
+
+        <!-- Card 2: Color Reveal -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#colorRevModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/color-reveal.jpg') }}" 
+                         alt="Color Reveal" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Color Reveal</p>
+            </div>
+        </div>
+
+        <!-- Card 3: Desktop App -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#fileOrgModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/file-organize.jpg') }}" 
+                         alt="Data Analysis" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Desktop App</p>
+            </div>
+        </div>
+
+        <!-- Card 4: Dino-bot -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#botDinoModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/bot-Dino.jpg') }}" 
+                         alt="Automation" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Dino-Bot</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Card 5: Brew & Browse -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#coffeeWifiModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/coffee_wifi.jpg') }}" 
+                         alt="Web Development" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Brew & Browse</p>
+            </div>
+        </div>
+        <!-- Card 6: Space Invaders -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#spaceInvadeModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/space-invaders.jpg') }}" 
+                         alt="Space Invaders" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Space Invaders</p>
+            </div>
+        </div>
+        <!-- Card 7: Type Eraser -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#typeEraseModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/type-erase.jpg') }}" 
+                         alt="Type Eraser" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Just Type</p>
+            </div>
+        </div>
+        <!-- Card 8: PDF-Audio -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#pdfAudioModal">
+                <div class="card-overlay">
+                    <img src="{{ url_for('static', filename='assets/images/pdf-audio.jpg') }}" 
+                         alt="Type Eraser" class="card-img">
+                    <div class="overlay">
+                        <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                </div>
+                <p class="card-text">Convert PDF to Audio</p>
+            </div>
+        </div>
+
+
+
+<!-- Modal for Harmony House -->
+<div class="modal fade" id="webDevModal" tabindex="-1" aria-labelledby="webDevModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="webDevModalLabel">Web Development Project Demo</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/web-dev-vid.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Color reveal -->
+<div class="modal fade" id="colorRevModal" tabindex="-1" aria-labelledby="colorRevModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="colorRevModalLabel">Color Reveal Project Demo</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/color-reveal-edited.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for file-org -->
+<div class="modal fade" id="fileOrgModal" tabindex="-1" aria-labelledby="fileOrgModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="fileOrgModalLabel">Desktop App</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/file-organizer.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for coffee and wifi -->
+<div class="modal fade" id="coffeeWifiModal" tabindex="-1" aria-labelledby="coffeeWifiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="coffeeWifiModalLabel">Brew & Browse Demo</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/Brew&Browse.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for Space Invaders -->
+<div class="modal fade" id="spaceInvadeModal" tabindex="-1" aria-labelledby="spaceInvadeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="spaceInvadeModalLabel">Space Invaders</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/space_invaders.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Type Eraser -->
+<div class="modal fade" id="typeEraseModal" tabindex="-1" aria-labelledby="typeEraseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="typeEraseModalLabel">Just Type</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/type-eraser.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for PDF to Audio -->
+<div class="modal fade" id="pdfAudioModal" tabindex="-1" aria-labelledby="pdfAudioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="pdfAudioModalLabel">PDF to Audio</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='assets/videos/pdf-audio.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>A Little About Me</h1>      
+        <p>
+            I’m a dedicated and ambitious Python developer, stepping into the tech world with the same relentless drive that made me successful in my past career in construction. As a father of three, I understand the value of hard work, perseverance, and pushing myself to be the best in everything I do.
+        </p>
+        <p>
+            My journey into programming started with a passion for problem-solving and a desire for a new challenge. Now, I build web applications, automate tasks, analyze data, and develop both front-end and back-end solutions. Whether it's crafting clean and responsive webpages, building simple games, or implementing authentication and security, I take pride in doing things the right way.
+        </p>
+        <p>
+            What sets me apart isn’t just what I know—it's my unwavering commitment to success. I approach every project with a mindset that failure isn’t an option. I don’t stop until the job is done, and done right.
+        </p>
+        <p>
+            I’m excited to continue growing as a developer, learning new technologies, and taking on challenges that push my skills to the next level.
+        </p>
+        
+        <!-- Contact Me Button -->
+        <a href="/contact" class="btn btn-primary mt-3">Contact Me</a>
+    </div>
+</div>
+
+{% endblock %}
