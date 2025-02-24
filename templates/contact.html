@@ -45,39 +45,36 @@
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    window.onload = () => {
-        emailjs.init("4t6ebSCys3Hm8NPUe");
-    }
-
-    document.getElementById('contactForm').onsubmit = function(event) {
+   document.getElementById('contactForm').onsubmit = function(event) {
         event.preventDefault();
 
-        emailjs.sendForm('service_qlixm65', 'template_itire5i', this)
-            .then(() => {
-                // Show Thank You Message
-                document.getElementById('thankYouMessage').style.display = 'block';
+        const formData = {
+            fname: document.getElementById('fname').value,
+            lname: document.getElementById('lname').value,
+            phone: document.getElementById('phone').value,  // New field for phone
+            company: document.getElementById('company').value,  // New field for company
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value
+        };
 
-                // Hide Form
-                document.getElementById('contactForm').style.display = 'none';
-
-                // Clear Error Message if shown
-                document.getElementById('errorMessage').style.display = 'none';
-
-                // Redirect to Home Page after 3 seconds
-                setTimeout(() => {
-                    window.location.href = '/'; 
-                }, 3000);
-
-                // Reset Form
+        fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert('Email sent successfully!');
                 document.getElementById('contactForm').reset();
-            })
-            .catch((err) => {
-                console.error('EmailJS Error:', err);
-                
-                // Show Error Message
-                document.getElementById('errorMessage').style.display = 'block';
-            });
-    }
+            } else {
+                alert('Failed to send email.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    };
 </script>
 
 {% endblock %}
