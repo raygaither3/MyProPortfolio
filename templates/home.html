@@ -1,316 +1,197 @@
 {% extends "base.html" %}
 
-
 {% block body %}
 
 
-
-<!-- Jumbotron -->
+<!-- Hero Section -->
 <div class="hero-section text-center text-white">
-    <h1 class="hero-title">Bringing Ideas to Life with Code</h1>
-    <p class="hero-subtitle">
-        Passionate developer skilled in Python, web development, and data analysis—building innovative solutions one project at a time.<br>  RAY GAITHER
-    </p>
-    <button id="contactBtn" class="btn btn-primary">Contact Me</button>
+    <div class="hero-bg-overlay"></div> <!-- This will cover the full background -->
+    <div class="hero-content">
+      <h1 class="hero-title">Turning Grit Into Real-World Software</h1>
+      <p class="hero-subtitle">
+        I'm Ray Gaither — a Python developer certified through 100 Days of Code, driven by self-learning and real-world problem solving.
+        From automation scripts to full-stack web apps, I build tools that work.
+      </p>
+      <a href="{{ url_for('contact') }}" class="btn mt-3">Let’s Work Together</a>
+    </div>
 </div>
 
 <div class="jumbotron">
     <div class="container text-center">
-        <h1>Lets Get Started
-        </h1>      
-        <p>Below are examples of some of the programs I’ve developed, ranging from an e-commerce web app to a color reveal tool and a file-organizing desktop app. Explore the video clips to see my work in action!</p>
+        <h1>Let’s Get Started</h1>
+        <p>Below are examples of some of the programs I’ve developed, ranging from e-commerce sites to desktop apps and automation tools.</p>
     </div>
 </div>
 
-
-<div class="container">
+<div class="container py-5">
     <div class="row">
-        <!-- Card 1: E-commerce -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#webDevModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/web-dev-pic.jpg') }}" 
-                         alt="Web Development" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
+
+        <!-- SwingBets -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/SwingBets.jpg') }}" class="card-img-top" alt="SwingBets App">
+                <div class="card-body">
+                    <h5 class="card-title">📊 SwingBets – Sportsbook App</h5>
+                    <p class="card-text">
+                        A full-featured Flask app for managing user accounts, placing and tracking sports bets with real-time odds. Designed to simulate a real sportsbook system.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Flask, SQLite, Bootstrap, Flask-Login, External Odds API</p>
+                    <a href="{{ url_for('static', filename='assets/previews/Swingbets.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
-                <p class="card-text">E-commerce App</p>
             </div>
         </div>
 
-        <!-- Card 2: Color Reveal -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#colorRevModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/color-reveal.jpg') }}" 
-                         alt="Color Reveal" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
+        <!-- Hayat's Bijoux -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/HayatsBijoux.jpg') }}" class="card-img-top" alt="Hayat's Bijoux E-commerce">
+                <div class="card-body">
+                    <h5 class="card-title">💍 Hayat's Bijoux – E-commerce Site</h5>
+                    <p class="card-text">
+                        A polished, custom jewelry shop built for a real client. Features a product catalog, cart, checkout flow, user login, and admin dashboard.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Flask, Stripe API, SQLite, HTML, CSS, JavaScript</p>
+                    <a href="{{ url_for('static', filename='assets/previews/Hayatsbijoux.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
-                <p class="card-text">Color Reveal</p>
             </div>
         </div>
 
-        <!-- Card 3: Desktop App -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#fileOrgModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/file-organize.jpg') }}" 
-                         alt="Data Analysis" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
+        <!-- Harmony House -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/harmony-house.jpg') }}" class="card-img-top" alt="Harmony House E-commerce">
+                <div class="card-body">
+                    <h5 class="card-title">🕯️ Harmony House – Candle Shop</h5>
+                    <p class="card-text">
+                        A sleek black-and-white themed e-commerce platform for handmade candles. Features inventory management, user accounts, Stripe checkout, and admin tools.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Flask, SQLite, Jinja2, Stripe API, HTML/CSS/JavaScript</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
-                <p class="card-text">Desktop App</p>
             </div>
         </div>
 
-        <!-- Card 4: Dino-bot -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#botDinoModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/bot-Dino.jpg') }}" 
-                         alt="Automation" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
+        <!-- Color Reveal -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/color-reveal.jpg') }}" class="card-img-top" alt="Color Reveal App">
+                <div class="card-body">
+                    <h5 class="card-title">🎨 Color Reveal Tool</h5>
+                    <p class="card-text">
+                        Upload any image and instantly extract the dominant color palette using Flask and JavaScript. Includes a custom-built color preview and copy-to-clipboard features.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Flask, HTML, CSS, JavaScript, PIL</p>
+                    <a href="{{ url_for('static', filename='assets/previews/Colorreveal.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
-                <p class="card-text">Dino-Bot</p>
             </div>
         </div>
+
+        <!-- Brew & Browse -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/coffee_wifi.jpg') }}" class="card-img-top" alt="Brew & Browse App">
+                <div class="card-body">
+                    <h5 class="card-title">☕ Brew & Browse</h5>
+                    <p class="card-text">
+                        A Flask-powered review site for coffee shops. Users can explore local cafés based on WiFi quality, seating availability, outlets, and crowd noise. Each listing includes user ratings and location data.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Flask, Bootstrap, SQLite, WTForms, Jinja2</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Organizer -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/file-organize.jpg') }}" class="card-img-top" alt="File Organizer App">
+                <div class="card-body">
+                    <h5 class="card-title">🧹 File Organizer</h5>
+                    <p class="card-text">
+                        A handy desktop app I built to clean up my Downloads folder. It automatically moves files to the right folders (images, videos, documents, etc.) — no more digital clutter.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Python, OS module, Tkinter (GUI)</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Dino -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/bot-Dino.jpg') }}" class="card-img-top" alt="Bot Dino Automation">
+                <div class="card-body">
+                    <h5 class="card-title">🦖 Bot Dino</h5>
+                    <p class="card-text">
+                        Just for fun — this bot plays the Chrome Dinosaur game for you. It uses basic image detection and keyboard automation to keep the dino jumping.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Python, PyAutoGUI, PIL, Time module</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Not Applicable)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF to Audio -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/pdf-audio.jpg') }}" class="card-img-top" alt="PDF to Audio Converter">
+                <div class="card-body">
+                    <h5 class="card-title">📚 PDF to Audio</h5>
+                    <p class="card-text">
+                        Upload a PDF and convert it into a spoken audio file — great for listening to books, notes, or reports on the go. Simple interface, one-click download.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Python, PyPDF2, gTTS, Tkinter</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Type-Eraser -->
+        <div class="col-md-6 mb-4">
+            <div class="card project-card h-100 bg-dark text-white border-light">
+                <img src="{{ url_for('static', filename='assets/images/type-erase.jpg') }}" class="card-img-top" alt="Type-Eraser App">
+                <div class="card-body">
+                    <h5 class="card-title">⌨️ Type-Eraser</h5>
+                    <p class="card-text">
+                        A motivational typing app that punishes hesitation — if you stop typing for more than 5 seconds, your work is gone. Great for writer’s block or a creative kickstart.
+                    </p>
+                    <p><strong>Tech Stack:</strong> Python, Tkinter, Time module</p>
+                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <!-- Card 5: Brew & Browse -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#coffeeWifiModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/coffee_wifi.jpg') }}" 
-                         alt="Web Development" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
-                </div>
-                <p class="card-text">Brew & Browse</p>
-            </div>
-        </div>
-        <!-- Card 6: Space Invaders -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#spaceInvadeModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/space-invaders.jpg') }}" 
-                         alt="Space Invaders" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
-                </div>
-                <p class="card-text">Space Invaders</p>
-            </div>
-        </div>
-        <!-- Card 7: Type Eraser -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#typeEraseModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/type-erase.jpg') }}" 
-                         alt="Type Eraser" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
-                </div>
-                <p class="card-text">Just Type</p>
-            </div>
-        </div>
-        <!-- Card 8: PDF-Audio -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card card-link" data-bs-toggle="modal" data-bs-target="#pdfAudioModal">
-                <div class="card-overlay">
-                    <img src="{{ url_for('static', filename='assets/images/pdf-audio.jpg') }}" 
-                         alt="Type Eraser" class="card-img">
-                    <div class="overlay">
-                        <i class="fa fa-play-circle play-icon"></i>
-                    </div>
-                </div>
-                <p class="card-text">Convert PDF to Audio</p>
-            </div>
-        </div>
-
-
-
-<!-- Modal for Harmony House -->
-<div class="modal fade" id="webDevModal" tabindex="-1" aria-labelledby="webDevModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="webDevModalLabel">Web Development Project Demo</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/web-dev-vid.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Color reveal -->
-<div class="modal fade" id="colorRevModal" tabindex="-1" aria-labelledby="colorRevModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="colorRevModalLabel">Color Reveal Project Demo</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/color-reveal-edited.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for file-org -->
-<div class="modal fade" id="fileOrgModal" tabindex="-1" aria-labelledby="fileOrgModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="fileOrgModalLabel">Desktop App</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/file-organizer.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal for coffee and wifi -->
-<div class="modal fade" id="coffeeWifiModal" tabindex="-1" aria-labelledby="coffeeWifiModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="coffeeWifiModalLabel">Brew & Browse Demo</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/Brew&Browse.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal for Space Invaders -->
-<div class="modal fade" id="spaceInvadeModal" tabindex="-1" aria-labelledby="spaceInvadeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="spaceInvadeModalLabel">Space Invaders</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/space_invaders.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Type Eraser -->
-<div class="modal fade" id="typeEraseModal" tabindex="-1" aria-labelledby="typeEraseModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="typeEraseModalLabel">Just Type</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/type-eraser.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for PDF to Audio -->
-<div class="modal fade" id="pdfAudioModal" tabindex="-1" aria-labelledby="pdfAudioModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title text-white" id="pdfAudioModalLabel">PDF to Audio</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <video width="100%" controls>
-                    <source src="{{ url_for('static', filename='assets/videos/pdf-audio.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="jumbotron">
     <div class="container text-center">
         <h1>A Little About Me</h1>      
         <p>
-            I’m a dedicated and ambitious Python developer, stepping into the tech world with the same relentless drive that made me successful in my past career in construction. As a father of three, I understand the value of hard work, perseverance, and pushing myself to be the best in everything I do.
+            I’m Ray Gaither — a Python developer and father of three who’s traded the tile saw for a text editor. After years in construction, I decided to chase a more sustainable future for my family and dove into coding headfirst.
         </p>
         <p>
-            My journey into programming started with a passion for problem-solving and a desire for a new challenge. Now, I build web applications, automate tasks, analyze data, and develop both front-end and back-end solutions. Whether it's crafting clean and responsive webpages, building simple games, or implementing authentication and security, I take pride in doing things the right way.
+            I’ve completed the 100 Days of Code bootcamp, but my real learning came through building — from automating file systems to deploying e-commerce platforms. I specialize in Python, Flask, and web automation, and I bring the same work ethic to tech that I brought to every job site.
         </p>
         <p>
-            What sets me apart isn’t just what I know—it's my unwavering commitment to success. I approach every project with a mindset that failure isn’t an option. I don’t stop until the job is done, and done right.
+            I don’t quit. I don’t cut corners. I build solutions that solve real problems, and I do it with pride and purpose.
         </p>
         <p>
-            I’m excited to continue growing as a developer, learning new technologies, and taking on challenges that push my skills to the next level.
-        </p>
-        
-        <!-- Contact Me Button -->
-        <button id="contactBtn" class="btn btn-primary">Contact Me</button>
+            I’m excited to grow as a developer, keep learning, and join a team that values resilience and results.
+        </p>    
+        <a href="{{ url_for('contact') }}" class="ws-btn">Contact Me</a>
     </div>
 </div>
 
-
-<!-- Modal for Sending Email -->
-<div id="contactModal" class="modal">
-    <div class="modal-content">
-        <span id="closeBtn" class="close">&times;</span>
-        <h2>Contact Me</h2>
-        <p>Your email: <strong>youremail@example.com</strong></p>
-        <form id="contactForm">
-            <label for="userEmail">Your Email:</label>
-            <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
-
-            <label for="userMessage">Message:</label>
-            <textarea id="userMessage" name="userMessage" placeholder="Write your message..." required></textarea>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </div>
-</div>
-
-<!-- Thank You Message (Hidden by Default) -->
-<div id="thankYouMessage" style="display: none;">Thank you for your message! I will get back to you soon.</div>
-
+<script src="{{ url_for('static', filename='js/myscripts.js') }}"></script>
 
 {% endblock %}

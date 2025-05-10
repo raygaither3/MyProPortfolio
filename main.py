@@ -1,5 +1,5 @@
 from flask_bootstrap import Bootstrap5
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for
 import os
 from dotenv import load_dotenv
 import smtplib
@@ -59,7 +59,12 @@ def send_email():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': 'Failed to send email.'}), 500
+    
 
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == '__main__':

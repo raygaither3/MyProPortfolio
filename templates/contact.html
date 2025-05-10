@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="contact-form-container">
+  <h2 class="text-center mb-4">Contact Me</h2>
+  <form id="contactForm">
+    <div class="mb-3">
+      <input type="email" name="userEmail" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+      <textarea name="userMessage" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="ws-btn">Send</button>
+  </form>
+  <div id="formStatus" class="text-center mt-3"></div>
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const email = e.target.userEmail.value;
+  const message = e.target.userMessage.value;
+
+  const response = await fetch("/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userEmail: email, userMessage: message })
+  });
+
+  const result = await response.json();
+  const status = document.getElementById("formStatus");
+  if (response.ok) {
+    status.innerHTML = "<span class='text-success'>Message sent successfully!</span>";
+    e.target.reset();
+  } else {
+    status.innerHTML = "<span class='text-danger'>Something went wrong. Try again.</span>";
+  }
+});
+</script>
+{% endblock %}
