@@ -1,40 +1,65 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="contact-form-container">
-  <h2 class="text-center mb-4">Contact Me</h2>
-  <form id="contactForm">
-    <div class="mb-3">
-      <input type="email" name="userEmail" class="form-control" placeholder="Your Email" required>
+<div class="contact-form-container text-white">
+    <div class="card shadow-lg p-4">
+  
+      <h2 class="text-center mb-3">Let’s Build Something Together</h2>
+      <p class="text-center mb-4" style="color: #ccc;">
+        Whether it's software, automation, or hands-on engineering — I'm always up for a challenge. Reach out and let's connect.
+      </p>
+  
+      <!-- Thank You Message -->
+      <div id="thankYouMessage" class="text-center text-success mb-3" style="display: none;">
+        ✅ Message sent! I’ll get back to you soon.
+      </div>
+  
+      <!-- Contact Form -->
+      <form id="contactForm" action="https://formspree.io/f/mdkgdpvk" method="POST">
+        <div class="mb-3 input-group">
+          <span class="input-group-text bg-secondary border-0 text-white">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <input type="email" name="email" class="form-control bg-dark text-white border-secondary" placeholder="Your Email" required>
+        </div>
+  
+        <div class="mb-3 input-group">
+          <span class="input-group-text bg-secondary border-0 text-white">
+            <i class="fas fa-comment-alt"></i>
+          </span>
+          <textarea name="message" class="form-control bg-dark text-white border-secondary" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+  
+        <div class="d-grid">
+          <button type="submit" class="btn btn-outline-light">Send Message</button>
+        </div>
+      </form>
+  
     </div>
-    <div class="mb-3">
-      <textarea name="userMessage" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-    </div>
-    <button type="submit" class="ws-btn">Send</button>
-  </form>
-  <div id="formStatus" class="text-center mt-3"></div>
-</div>
+  </div>
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
-  const email = e.target.userEmail.value;
-  const message = e.target.userMessage.value;
-
-  const response = await fetch("/send-email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userEmail: email, userMessage: message })
-  });
-
-  const result = await response.json();
-  const status = document.getElementById("formStatus");
-  if (response.ok) {
-    status.innerHTML = "<span class='text-success'>Message sent successfully!</span>";
-    e.target.reset();
-  } else {
-    status.innerHTML = "<span class='text-danger'>Something went wrong. Try again.</span>";
-  }
-});
-</script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+  
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById("thankYouMessage").style.display = "block";
+          form.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+      });
+    });
+  </script>
 {% endblock %}
