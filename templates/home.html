@@ -61,14 +61,14 @@
         <!-- Harmony House -->
         <div class="col-md-6 mb-4">
             <div class="card project-card h-100 bg-dark text-white border-light">
-                <img src="{{ url_for('static', filename='assets/images/harmony-house.jpg') }}" class="card-img-top" alt="Harmony House E-commerce">
+                <img src="{{ url_for('static', filename='assets/images/Harmhouse.jpg') }}" class="card-img-top" alt="Harmony House E-commerce">
                 <div class="card-body">
                     <h5 class="card-title">🕯️ Harmony House – Candle Shop</h5>
                     <p class="card-text">
                         A sleek black-and-white themed e-commerce platform for handmade candles. Features inventory management, user accounts, Stripe checkout, and admin tools.
                     </p>
                     <p><strong>Tech Stack:</strong> Flask, SQLite, Jinja2, Stripe API, HTML/CSS/JavaScript</p>
-                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="{{ url_for('static', filename='assets/previews/Harmondyhouse.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
                     <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                         A Flask-powered review site for coffee shops. Users can explore local cafés based on WiFi quality, seating availability, outlets, and crowd noise. Each listing includes user ratings and location data.
                     </p>
                     <p><strong>Tech Stack:</strong> Flask, Bootstrap, SQLite, WTForms, Jinja2</p>
-                    <a href="#" class="btn btn-secondary disabled me-2">Live Demo (Coming Soon)</a>
+                    <a href="{{ url_for('static', filename='assets/previews/Brewbrowse.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
                     <a href="#" class="btn btn-outline-light disabled">Source Code (Coming Soon)</a>
                 </div>
             </div>
