@@ -28,10 +28,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          <a class="nav-link" href="{{ url_for('main.projects') }}">Projects</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          <a class="nav-link" href="{{ url_for('main.services') }}">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.contact') }}">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('estimate.request_estimate') }}">Let's Talk</a>
         </li>
       </ul>
     </div>

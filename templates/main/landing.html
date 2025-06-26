@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ray Gaither | Developer & Builder</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .typed-text {
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.1em solid #f87171;
+      animation: typing 2s steps(20, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+  <section class="w-full h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Ray 👋</h1>
+    <p class="text-xl md:text-2xl h-10 mb-6">
+      <span id="rotating-text" class="typed-text"></span>
+    </p>
+    <div class="space-x-4">
+      <a href="{{ url_for('main.projects') }}" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full shadow-lg transition">See My Work</a>
+      <a href="{{ url_for('main.contact') }}" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg transition">Hire Me</a>
+    </div>
+  </section>
+
+  <script>
+    const phrases = [
+      "Flask Developer",
+      "Raspberry Pi Builder",
+      "Self-Taught Engineer",
+      "Problem Solver",
+      "Dream Launcher"
+    ];
+
+    let currentPhrase = 0;
+    const rotatingText = document.getElementById('rotating-text');
+
+    function typePhrase() {
+      rotatingText.classList.remove("typed-text");
+      rotatingText.textContent = phrases[currentPhrase];
+      void rotatingText.offsetWidth; // Trigger reflow
+      rotatingText.classList.add("typed-text");
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+    }
+
+    typePhrase();
+    setInterval(typePhrase, 3000);
+  </script>
+</body>
+</html>

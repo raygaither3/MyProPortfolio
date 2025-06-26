@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!-- Projects Landing Hero -->
+<section class="text-center py-5 bg-dark text-white">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Featured Work</h1>
+    <p class="lead">Real apps. Real users. Real results.</p>
+    <a href="{{ url_for('estimate.request_estimate') }}" class="btn btn-primary mt-3">Let's Work Together</a>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="py-5 bg-black text-white">
+  <div class="container">
+    <div class="row">
+
+      <!-- Hayat's Bijoux -->
+      <div class="col-md-6 col-lg-6 mb-4">
+        <div class="card h-100 bg-dark text-white border-light">
+          <img src="{{ url_for('static', filename='assets/images/hayatbijoux.jpg') }}" class="card-img-top" alt="Hayat's Bijoux">
+          <div class="card-body">
+            <h5 class="card-title">💍 Hayat's Bijoux</h5>
+            <p class="card-text">Custom-built jewelry e-commerce site with full cart + checkout system.</p>
+            <p><strong>Tech Stack:</strong> Flask · Stripe · SQLite · HTML · CSS · JS</p>
+            <a href="https://hayatbijoux.com" target="_blank" class="btn btn-primary me-2">Live Demo</a>
+            <a href="https://github.com/raygaither3/HayatJewelry" target="_blank" class="btn btn-outline-light">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ray's Space Station -->
+      <div class="col-md-6 col-lg-6 mb-4">
+        <div class="card h-100 bg-dark text-white border-light">
+          <img src="{{ url_for('static', filename='assets/images/rss_screenshot.jpg') }}" class="card-img-top" alt="Rocket App">
+          <div class="card-body">
+            <h5 class="card-title">🚀 Ray's Space Station</h5>
+            <p class="card-text">Rocket launch controller + telemetry dashboard using Raspberry Pi + Flask.</p>
+            <p><strong>Tech Stack:</strong> Flask · GPIO · OpenCV · Hardware</p>
+            <a href="https://your-live-site.com" target="_blank" class="btn btn-primary me-2">Live Demo</a>
+            <a href="https://github.com/raygaither3/rocket_pad" target="_blank" class="btn btn-outline-light">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SwingBets -->
+      <div class="col-md-6 col-lg-6 mb-4">
+        <div class="card h-100 bg-dark text-white border-light">
+          <img src="{{ url_for('static', filename='assets/images/SwingBets.jpg') }}" class="card-img-top" alt="SwingBets App">
+          <div class="card-body">
+            <h5 class="card-title">📊 SwingBets</h5>
+            <p class="card-text">Simulated sportsbook with real-time odds, betting flow, and user auth.</p>
+            <p><strong>Tech Stack:</strong> Flask · API · Bootstrap · SQLite</p>
+            <a href="https://your-live-site.com" target="_blank" class="btn btn-primary me-2">Live Demo</a>
+            <a href="https://github.com/raygaither3/sportsbook_scaffold" target="_blank" class="btn btn-outline-light">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brew & Browse -->
+      <div class="col-md-6 col-lg-6 mb-4">
+        <div class="card h-100 bg-dark text-white border-light">
+          <img src="{{ url_for('static', filename='assets/images/brew_browse_home.jpg') }}" class="card-img-top" alt="Brew and Browse">
+          <div class="card-body">
+            <h5 class="card-title">☕ Brew & Browse</h5>
+            <p class="card-text">Find the best cafés for remote work. Users rate outlets, WiFi, and more.</p>
+            <p><strong>Tech Stack:</strong> Flask · SQLite · WTForms</p>
+            <a href="{{ url_for('static', filename='assets/previews/BrewandBrowse.gif') }}" target="_blank" class="btn btn-primary me-2">View Demo</a>
+            <a href="https://github.com/raygaither3/MyCoffeeAndWifi" target="_blank" class="btn btn-outline-light">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services-section bg-dark text-white py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">🚀 Services I Offer</h2>
+    <p class="lead mb-5">
+      I don't just build projects — I bring websites to life for real clients. If you like what you see, I can do the same for you.
+    </p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary h-100 text-white">
+          <div class="card-body">
+            <h5 class="card-title">💼 Custom Portfolios</h5>
+            <p class="card-text">
+              Whether you're a freelancer, creative, or entrepreneur, I’ll design a site that reflects your identity and shows off your work.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary h-100 text-white">
+          <div class="card-body">
+            <h5 class="card-title">🛍️ Small Business Websites</h5>
+            <p class="card-text">
+              Need an online shop or a professional landing page? I build responsive, mobile-friendly sites that convert visitors into customers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary h-100 text-white">
+          <div class="card-body">
+            <h5 class="card-title">🔧 Custom Web Tools</h5>
+            <p class="card-text">
+              From file organizers to data dashboards, I can build custom tools to help automate your workflow or solve specific problems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{ url_for('main.contact') }}" class="btn btn-outline-light btn-lg mt-4">Work With Me</a>
+  </div>
+</section>
+
+{% endblock %}
