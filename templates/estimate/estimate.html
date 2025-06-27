@@ -10,60 +10,67 @@
   </div>
 </section>
 
+{% if request.method == 'POST' %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show mt-3" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+{% endif %}
+
 <section class="py-5 bg-light">
   <div class="container">
-    <form action="{{ url_for('estimate.request_estimate') }}" method="POST" enctype="multipart/form-data" class="bg-white p-5 shadow rounded">
+    <form id="estimateForm" action="{{ url_for('estimate.estimate') }}" method="POST" enctype="multipart/form-data">
       <div class="row mb-3">
         <div class="col-md-6">
-          <label for="name" class="form-label">Name</label>
+          <label for="name" class="form-label text-dark">Name</label>
           <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="col-md-6">
-          <label for="email" class="form-label">Email</label>
+          <label for="email" class="form-label text-dark">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-md-6">
-          <label for="project_type" class="form-label">Project Type</label>
+          <label for="project_type" class="form-label text-dark">Project Type</label>
           <select class="form-select" id="project_type" name="project_type" required>
-            <option value="">Choose one...</option>
-            <option>Portfolio / Branding Website</option>
-            <option>Small Business Site</option>
-            <option>Automation Tool / Script</option>
-            <option>Other</option>
+            <option value="">-- Select Project Type --</option>
+            <option value="Portfolio / Branding Website">Portfolio / Branding Website</option>
+            <option value="Small Business Site">Small Business Site</option>
+            <option value="Custom Web App">Custom Web App</option>
+            <option value="Automation / Bots">Automation / Bots</option>
+            <option value="Other">Other</option>
           </select>
         </div>
-        <div class="col-md-6">
-          <label for="budget" class="form-label">Estimated Budget</label>
-          <select class="form-select" id="budget" name="budget" required>
-            <option value="">Choose one...</option>
-            <option>Less than $500</option>
-            <option>$500 – $1000</option>
-            <option>$1000 – $2000</option>
-            <option>Custom / Not Sure</option>
-          </select>
+        <div class="col-md-3">
+          <label for="budget" class="form-label text-dark">Estimated Budget</label>
+          <input type="text" class="form-control" id="budget" name="budget">
+        </div>
+        <div class="col-md-3">
+          <label for="deadline" class="form-label text-dark">Deadline</label>
+          <input type="text" class="form-control" id="deadline" name="deadline">
         </div>
       </div>
 
       <div class="mb-3">
-        <label for="deadline" class="form-label">Desired Deadline</label>
-        <input type="date" class="form-control" id="deadline" name="deadline">
+        <label for="description" class="form-label text-dark">Project Description</label>
+        <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
       </div>
 
       <div class="mb-3">
-        <label for="description" class="form-label">Project Description</label>
-        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Tell me what you need..." required></textarea>
+        <label for="file" class="form-label text-dark">Optional Attachment</label>
+        <input class="form-control" type="file" id="file" name="file">
       </div>
 
-      <div class="mb-3">
-        <label for="reference" class="form-label">Upload Files (optional)</label>
-        <input type="file" class="form-control" id="reference" name="reference">
-      </div>
-
-      <div class="text-center">
-        <button type="submit" class="btn btn-dark px-5">Request Estimate</button>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-dark">Submit Estimate</button>
       </div>
     </form>
   </div>

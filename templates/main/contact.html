@@ -13,23 +13,34 @@
       <div id="thankYouMessage" class="text-center text-success mb-3" style="display: none;">
         ✅ Message sent! I’ll get back to you soon.
       </div>
-  
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show mt-3" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+        
       <!-- Contact Form -->
-      <form id="contactForm" action="https://formspree.io/f/mdkgdpvk" method="POST">
+      <form id="contactForm" method="POST" action="{{ url_for('main.contact') }}">
         <div class="mb-3 input-group">
           <span class="input-group-text bg-secondary border-0 text-white">
             <i class="fas fa-envelope"></i>
           </span>
           <input type="email" name="email" class="form-control bg-dark text-white border-secondary" placeholder="Your Email" required>
         </div>
-  
+
         <div class="mb-3 input-group">
           <span class="input-group-text bg-secondary border-0 text-white">
             <i class="fas fa-comment-alt"></i>
           </span>
           <textarea name="message" class="form-control bg-dark text-white border-secondary" rows="5" placeholder="Your Message" required></textarea>
         </div>
-  
+
         <div class="d-grid">
           <button type="submit" class="btn btn-outline-light">Send Message</button>
         </div>
@@ -38,28 +49,4 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-  
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      })
-      .then(response => {
-        if (response.ok) {
-          document.getElementById("thankYouMessage").style.display = "block";
-          form.reset();
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Something went wrong. Please try again.");
-      });
-    });
-  </script>
 {% endblock %}
