@@ -1,0 +1,73 @@
+/* SERVICES PAGE STYLES */
+
+/* Hero Section */
+.services-page .services-hero {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../assets/images/hero-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+/* Dark Cards */
+.services-page .card.bg-dark .card-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.services-page .card.bg-dark .card-text {
+  color: #dddddd;
+}
+
+/* Light Cards */
+.services-page .card.bg-light .card-title {
+  color: #222222;
+  font-weight: 600;
+}
+
+.services-page .card.bg-light .card-subtitle {
+  color: #444444;
+}
+
+/* Light card buttons */
+.services-page .card.bg-light .btn-outline-dark {
+  border-color: #333333;
+  color: #333333;
+}
+
+.services-page .card.bg-light .btn-outline-dark:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Testimonial Section */
+.services-page blockquote {
+  font-style: italic;
+  color: #555555;
+  font-size: 1.2rem;
+}
+
+.services-page blockquote footer {
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.services-page .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.services-page .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}

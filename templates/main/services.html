@@ -2,131 +2,137 @@
 
 {% block title %}Services – What I Can Build For You{% endblock %}
 
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+{% endblock %}
+
 {% block body %}
-<section class="services-hero text-center text-white py-5 bg-dark">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Need a Developer Who Delivers?</h1>
-    <p class="lead">From storefronts to custom automation, I build software that works — fast, clean, and client-ready.</p>
-    <a href="{{ url_for('main.contact') }}" class="btn btn-primary btn-lg mt-3">Get a Free Quote</a>
-  </div>
-</section>
-
-<section class="services-list py-5">
-  <div class="container">
-    <div class="row text-center">
-
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow bg-dark text-white">
-          <div class="card-body">
-            <h3 class="card-title">🚀 Portfolio & Branding Sites</h3>
-            <p class="card-text">Beautiful, responsive websites that showcase your business, brand, or work. Great for artists, freelancers, and startups.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow bg-dark text-white">
-          <div class="card-body">
-            <h3 class="card-title">🛒 Small Business Websites</h3>
-            <p class="card-text">Online stores with full checkout flows, product management, and a dashboard — built just like Hayat's Bijoux.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow bg-dark text-white">
-          <div class="card-body">
-            <h3 class="card-title">🧰 Custom Tools & Automations</h3>
-            <p class="card-text">Need a bot, form filler, data scraper, or file organizer? I’ve built them all — and I can build yours.</p>
-          </div>
-        </div>
-      </div>
-
+<div class="services-page">
+  <section class="services-page services-hero text-center text-white py-5 bg-dark">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Need a Developer Who Delivers?</h1>
+      <p class="lead">From storefronts to custom automation, I build software that works — fast, clean, and client-ready.</p>
+      <a href="{{ url_for('estimate.estimate') }}" class="btn btn-primary btn-lg mt-3">Get a Free Quote</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Web Design Services Section -->
-<section class="py-5 bg-dark text-white">
-  <div class="container text-center">
-    <h2 class="mb-4">Web Design Services</h2>
-    <p class="mb-5 lead">Whether you need a one-page landing site or a full business platform, I build professional, affordable web solutions tailored to you.</p>
+  <section class="services-list py-5">
+    <div class="container">
+      <div class="row text-center">
 
-    <div class="row">
-      <!-- Starter Site -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 bg-light text-dark border-0 shadow">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Starter Site</h5>
-            <h6 class="card-subtitle mb-2 text-muted">$300 – $500</h6>
-            <p class="card-text small flex-grow-1">
-              One-page responsive landing site.<br>
-              Mobile-ready, contact form, deployed and fast.
-            </p>
-            <a href="{{ url_for('main.contact') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow bg-dark text-white">
+            <div class="card-body">
+              <h3 class="card-title">🚀 Portfolio & Branding Sites</h3>
+              <p class="card-text">Beautiful, responsive websites that showcase your business, brand, or work. Great for artists, freelancers, and startups.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Full Site -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 bg-light text-dark border-0 shadow">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Full Site</h5>
-            <h6 class="card-subtitle mb-2 text-muted">$700 – $1,000</h6>
-            <p class="card-text small flex-grow-1">
-              Multi-page site with homepage, projects, about, contact.<br>
-              Clean design, animations, SEO basics.
-            </p>
-            <a href="{{ url_for('main.contact') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow bg-dark text-white">
+            <div class="card-body">
+              <h3 class="card-title">🛒 Small Business Websites</h3>
+              <p class="card-text">Online stores with full checkout flows, product management, and a dashboard — built just like Hayat's Bijoux.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Business Site -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 bg-light text-dark border-0 shadow">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Business Site</h5>
-            <h6 class="card-subtitle mb-2 text-muted">$1,200 – $1,800</h6>
-            <p class="card-text small flex-grow-1">
-              Full-featured site with products, reviews, admin backend, checkout flow or scheduling.
-            </p>
-            <a href="{{ url_for('main.contact') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow bg-dark text-white">
+            <div class="card-body">
+              <h3 class="card-title">🧰 Custom Tools & Automations</h3>
+              <p class="card-text">Need a bot, form filler, data scraper, or file organizer? I’ve built them all — and I can build yours.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Custom Apps -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 bg-light text-dark border-0 shadow">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Custom Work</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Let’s Scope It</h6>
-            <p class="card-text small flex-grow-1">
-              Flask apps, automation tools, dashboards, and more.<br>
-              Tell me your vision — I’ll build the solution.
-            </p>
-            <a href="{{ url_for('main.contact') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
-          </div>
-        </div>
       </div>
     </div>
+  </section>
 
-    <p class="mt-4">Not sure where to start? <a href="{{ url_for('main.contact') }}" class="text-white text-decoration-underline">Reach out and I’ll guide you.</a></p>
-  </div>
-</section>
+  <!-- Web Design Services Section -->
+  <section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Web Design Services</h2>
+      <p class="mb-5 lead">Whether you need a one-page landing site or a full business platform, I build professional, affordable web solutions tailored to you.</p>
 
-<!-- Testimonials Section -->
-<section class="text-center bg-light text-dark py-5">
-  <div class="container">
-    <h2 class="mb-4">Trusted by Real Clients</h2>
-    <blockquote class="blockquote">
-      <p class="mb-0">"Ray took my ideas and made them a reality. The site looks incredible and runs smoothly. He’s professional and fast. Highly recommended."</p>
-      <footer class="blockquote-footer mt-2">Client – Hayat’s Bijoux</footer>
-    </blockquote>
-    <a href="{{ url_for('main.contact') }}" class="btn btn-danger mt-4">Let’s Talk About Your Project</a>
-  </div>
-</section>
+      <div class="row">
+        <!-- Starter Site -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 bg-light text-dark border-0 shadow">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Starter Site</h5>
+              <h6 class="card-subtitle mb-2 text-muted">$300 – $500</h6>
+              <p class="card-text small flex-grow-1">
+                One-page responsive landing site.<br>
+                Mobile-ready, contact form, deployed and fast.
+              </p>
+              <a href="{{ url_for('main.contact') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Full Site -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 bg-light text-dark border-0 shadow">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Full Site</h5>
+              <h6 class="card-subtitle mb-2 text-muted">$700 – $1,000</h6>
+              <p class="card-text small flex-grow-1">
+                Multi-page site with homepage, projects, about, contact.<br>
+                Clean design, animations, SEO basics.
+              </p>
+              <a href="{{ url_for('estimate.estimate') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Site -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 bg-light text-dark border-0 shadow">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Business Site</h5>
+              <h6 class="card-subtitle mb-2 text-muted">$1,200 – $1,800</h6>
+              <p class="card-text small flex-grow-1">
+                Full-featured site with products, reviews, admin backend, checkout flow or scheduling.
+              </p>
+              <a href="{{ url_for('estimate.estimate') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Apps -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 bg-light text-dark border-0 shadow">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Custom Work</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Let’s Scope It</h6>
+              <p class="card-text small flex-grow-1">
+                Flask apps, automation tools, dashboards, and more.<br>
+                Tell me your vision — I’ll build the solution.
+              </p>
+              <a href="{{ url_for('estimate.estimate') }}" class="btn btn-outline-dark mt-2">Let’s Talk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4">Not sure where to start? <a href="{{ url_for('main.contact') }}" class="text-white text-decoration-underline">Reach out and I’ll guide you.</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="text-center bg-light text-dark py-5">
+    <div class="container">
+      <h2 class="mb-4">Trusted by Real Clients</h2>
+      <blockquote class="blockquote">
+        <p class="mb-0">"Ray took my ideas and made them a reality. The site looks incredible and runs smoothly. He’s professional and fast. Highly recommended."</p>
+        <footer class="blockquote-footer mt-2">Client – Hayat’s Bijoux</footer>
+      </blockquote>
+      <a href="{{ url_for('estimate.estimate') }}" class="btn btn-danger mt-4">Let’s Talk About Your Project</a>
+    </div>
+  </section>
+</div>
 {% endblock %}
