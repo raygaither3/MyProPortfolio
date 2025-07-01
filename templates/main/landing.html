@@ -22,7 +22,15 @@
     @keyframes blink {
       50% { border-color: transparent }
     }
+
+    body {
+      background: linear-gradient(135deg, #101010, #1a1a1a);
+      color: #ffffff;
+    }
   </style>
+
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
 </head>
 <body class="bg-black text-white min-h-screen flex items-center justify-center">
   <section class="w-full h-screen flex flex-col items-center justify-center text-center px-4">
